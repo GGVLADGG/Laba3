@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.exe
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.deps.json
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.runtimeconfig.json
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.runtimeconfig.dev.json
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.dll
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\bin\Debug\netcoreapp3.1\Laba3Work1.pdb
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.AssemblyInfo.cs
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.dll
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.pdb
+C:\Users\user\Desktop\С#\Laba3Work1\Laba3Work1\obj\Debug\netcoreapp3.1\Laba3Work1.genruntimeconfig.cache
