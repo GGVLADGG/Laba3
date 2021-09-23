@@ -15,9 +15,14 @@ namespace Калькулятор
         public static double number = 0;
         static Calculator()
         {
+            Calculator.Repeat();
+        }
+        private static void Repeat()
+        {
             Console.WriteLine("Введіть математичну операцію: ");
             Console.WriteLine("Для того,щоб задати числа та знак операції окремо у вертикальному виді, після кожного числа, та знаку операції, введіть '+' ");
             input = Convert.ToString(Console.ReadLine());
+            int q = 0;
             if (input == "+")
             {
                 Console.WriteLine("Введіть числа та знак операції через Enter:");
@@ -35,19 +40,29 @@ namespace Калькулятор
                     {
                         if (n == '.')
                         {
+                            q++;
                             new_str1 = ",";
                             continue;
+                        }
+                        if (n == ',')
+                        {
+                            q++;
                         }
                         new_str1 = new_str1 + Convert.ToString(n);
                     }
                 }
+                if (q > 1)
+                {
+                    Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                    Calculator.Repeat();
+                }
+                q = 0;
                 foreach (char n in icon2)
                 {
                     if (icon2 != "+" && icon2 != "-" && icon2 != "*")
                     {
                         Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
-                        Console.ReadLine();
-                        Environment.Exit(-1);
+                        Calculator.Repeat();
                     }
                 }
                 foreach (char n in str2)
@@ -56,29 +71,43 @@ namespace Калькулятор
                     {
                         if (n == '.')
                         {
+                            q++;
                             new_str2 = ",";
                             continue;
                         }
+                        if (q == ',')
+                        {
+                            q++;
+                        }
                         new_str2 = new_str2 + Convert.ToString(n);
                     }
+                }
+                if (q > 1)
+                {
+                    Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                    Calculator.Repeat();
                 }
                 number1 = Convert.ToDouble(new_str1);
                 number2 = Convert.ToDouble(new_str2);
                 if (icon2 == "+")
                 {
                     Calculator.Summa();
+                    Repeat();
                 }
                 else if (icon2 == "-")
                 {
                     Calculator.Minus();
+                    Repeat();
                 }
                 else if (icon2 == "*")
                 {
                     Calculator.Dobytok();
+                    Repeat();
                 }
             }
             else
             {
+                q = 0;
                 int count = input.Length;
                 string[] massive_str = new string[count];
                 int p = 0;
@@ -86,8 +115,17 @@ namespace Калькулятор
                 string str = "";
                 foreach (char n in input)
                 {
+                    if (n == ',' || n == '.')
+                    {
+                        q++;
+                    }
                     if (n == '+' || n == '-' || n == '*')
                     {
+                        if (q > 1)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
                         icon = Convert.ToString(n);
                     }
                     massive_str[p] = Convert.ToString(n);
@@ -96,8 +134,7 @@ namespace Калькулятор
                 if (icon == "")
                 {
                     Console.WriteLine("Введена некоректна математична операція (відсутні знаки множення, додавання, віднімання, інше)");
-                    Console.ReadLine();
-                    Environment.Exit(-1);
+                    Calculator.Repeat();
                 }
                 p = 0;
                 for (int i = 0; i < massive_str.Length; i++)
@@ -126,6 +163,18 @@ namespace Калькулятор
                     }
                     if (new_massive_str[i] == "+" || new_massive_str[i] == "-" || new_massive_str[i] == "*")
                     {
+                        foreach (char n in str)
+                        {
+                            if (str == "," || str == ".")
+                            {
+                                q++;
+                            }
+                        }
+                        if (q > 1)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
                         number1 = Double.Parse(str);
                         w = str.Length;
                         str = "";
@@ -160,18 +209,34 @@ namespace Калькулятор
                     }
                 }
                 w++;
+                q = 0;
+                foreach (char n in str)
+                {
+                    if (str == "." || str == ",")
+                    {
+                        q++;
+                        if (q > 1)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
+                    }
+                }
                 number2 = Convert.ToDouble(str.Substring(w));
                 if (icon == "+")
                 {
                     Calculator.Summa();
+                    Repeat();
                 }
                 else if (icon == "-")
                 {
                     Calculator.Minus();
+                    Repeat();
                 }
                 else if (icon == "*")
                 {
                     Calculator.Dobytok();
+                    Repeat();
                 }
             }
         }
