@@ -51,14 +51,18 @@ namespace Калькулятор
                         if (n == '.')
                         {
                             q++;
-                            new_str1 = ",";
-                            continue;
+                            char k = ',';
+                            new_str1 = new_str1 + Convert.ToString(k);
                         }
-                        if (n == ',')
+                        else if (n == ',')
                         {
                             q++;
+                            new_str1 = new_str1 + Convert.ToString(n);
                         }
-                        new_str1 = new_str1 + Convert.ToString(n);
+                        else
+                        {
+                            new_str1 = new_str1 + Convert.ToString(n);
+                        }
                     }
                 }
                 if (q > 1)
@@ -91,14 +95,18 @@ namespace Калькулятор
                         if (n == '.')
                         {
                             q++;
-                            new_str2 = ",";
-                            continue;
+                            char k = ',';
+                            new_str2 = new_str2 + Convert.ToString(k);
                         }
-                        if (q == ',')
+                        else if (n == ',')
                         {
+                            new_str2 = new_str2 + Convert.ToString(n);
                             q++;
                         }
-                        new_str2 = new_str2 + Convert.ToString(n);
+                        else
+                        {
+                            new_str2 = new_str2 + Convert.ToString(n);
+                        }
                     }
                 }
                 if (q > 1)
@@ -185,6 +193,7 @@ namespace Калькулятор
                     Calculator.Repeat();
                 }
                 p = 0;
+                q = 0;
                 for (int i = 0; i < massive_str.Length; i++)
                 {
                     if (massive_str[i] == "+" || massive_str[i] == "-" || massive_str[i] == "*" || massive_str[i] == "1" || massive_str[i] == "2" || massive_str[i] == "3" || massive_str[i] == "4" || massive_str[i] == "5" || massive_str[i] == "6" || massive_str[i] == "7" || massive_str[i] == "8" || massive_str[i] == "9" || massive_str[i] == "0" || massive_str[i] == "." || massive_str[i] == ",")
@@ -228,11 +237,7 @@ namespace Калькулятор
                             Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
                             Calculator.Repeat();
                         }
-                        else
-                        {
-                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
-                            Calculator.Repeat();
-                        }
+                        
                         number1 = Double.Parse(str);
                         w = str.Length;
                         str = "";
@@ -280,8 +285,7 @@ namespace Калькулятор
                         }
                     }
                 }
-                Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
-                Calculator.Repeat();
+                
                 number2 = Convert.ToDouble(str.Substring(w));
                 if (icon == "+")
                 {
