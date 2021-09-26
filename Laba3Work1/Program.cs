@@ -106,8 +106,30 @@ namespace Калькулятор
                     Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
                     Calculator.Repeat();
                 }
-                number1 = Convert.ToDouble(new_str1);
-                number2 = Convert.ToDouble(new_str2);
+                foreach (char n in new_str1)
+                {
+                    if (n == '1' || n == '2' || n == '3' || n == '4' || n == '5' || n == '6' || n == '7' || n == '8' || n == '9' || n == '0')
+                    {
+                        number1 = Convert.ToDouble(new_str1);
+                    }
+                }
+                if (number1 == 0)
+                {
+                    Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                    Calculator.Repeat();
+                }
+                foreach (char n in new_str2)
+                {
+                    if (n == '1' || n == '2' || n == '3' || n == '4' || n == '5' || n == '6' || n == '7' || n == '8' || n == '9' || n == '0')
+                    {
+                        number2 = Convert.ToDouble(new_str2);
+                    }
+                }
+                if (number2 == 0)
+                {
+                    Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                    Calculator.Repeat();
+                }
                 if (icon2 == "+")
                 {
                     Calculator.Summa();
@@ -201,6 +223,16 @@ namespace Калькулятор
                             Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
                             Calculator.Repeat();
                         }
+                        if (str == "+" || str == "-" || str == "*")
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
                         number1 = Double.Parse(str);
                         w = str.Length;
                         str = "";
@@ -248,6 +280,8 @@ namespace Калькулятор
                         }
                     }
                 }
+                Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                Calculator.Repeat();
                 number2 = Convert.ToDouble(str.Substring(w));
                 if (icon == "+")
                 {
