@@ -34,8 +34,18 @@ namespace Калькулятор
                 string str2 = Convert.ToString(Console.ReadLine());
                 string new_str1 = "";
                 string new_str2 = "";
+                int g = 0;
                 foreach (char n in str1)
                 {
+                    if (n == '+' || n == '*' || n == '-')
+                    {
+                        g++;
+                        if (g > 0)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
+                    }
                     if (n == '1' || n == '2' || n == '3' || n == '4' || n == '5' || n == '6' || n == '7' || n == '8' || n == '9' || n == '0' || n == ',' || n == '.')
                     {
                         if (n == '.')
@@ -67,6 +77,15 @@ namespace Калькулятор
                 }
                 foreach (char n in str2)
                 {
+                    if (n == '+' || n == '*' || n == '-')
+                    {
+                        g++;
+                        if (g > 0)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
+                    }
                     if (n == '1' || n == '2' || n == '3' || n == '4' || n == '5' || n == '6' || n == '7' || n == '8' || n == '9' || n == '0' || n == ',' || n == '.')
                     {
                         if (n == '.')
@@ -111,6 +130,7 @@ namespace Калькулятор
                 int count = input.Length;
                 string[] massive_str = new string[count];
                 int p = 0;
+                int g = 0;
                 string icon = "";
                 string str = "";
                 foreach (char n in input)
@@ -121,6 +141,12 @@ namespace Калькулятор
                     }
                     if (n == '+' || n == '-' || n == '*')
                     {
+                        g++;
+                        if (g > 1)
+                        {
+                            Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
+                            Calculator.Repeat();
+                        }
                         if (q > 1)
                         {
                             Console.WriteLine("Введена некоректна математична операція(відсутні знаки множення, додавання, віднімання, інше)");
